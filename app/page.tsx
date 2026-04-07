@@ -40,7 +40,7 @@ export default function Menu() {
               className="bg-[#1e293b] border-4 border-yellow-500 rounded-[25px] py-8 px-2 flex flex-col items-center justify-center transition-all active:scale-90 shadow-[0_10px_20px_rgba(0,0,0,0.3)]"
             >
               <span className="text-[2.8rem] mb-2">💪🏼</span>
-              <span className="font-black text-sm uppercase italic tracking-wider text-red-600">
+              <span className="font-black text-sm uppercase italic tracking-wider text-white">
                 Básica
               </span>
             </Link>
@@ -56,7 +56,7 @@ export default function Menu() {
               className="bg-[#1e293b] border-4 border-yellow-500 rounded-[25px] py-8 px-2 flex flex-col items-center justify-center transition-all active:scale-90 shadow-[0_10px_20px_rgba(0,0,0,0.3)]"
             >
               <span className="text-[2.8rem] mb-2">⚡</span>
-              <span className="font-black text-sm uppercase italic tracking-wider text-red-600">
+              <span className="font-black text-sm uppercase italic tracking-wider text-white">
                 Pro
               </span>
             </Link>
