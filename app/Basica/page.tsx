@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Link from "next/link"
 import { useRouter } from "next/navigation"
 
 export default function Home() {
@@ -97,12 +98,12 @@ export default function Home() {
           <div className="space-y-6">
 
             {/* 🔙 NUEVO BOTÓN */}
-            <button
-              onClick={() => router.push("/")}
-              className="text-gray-400 text-sm font-bold uppercase hover:text-white"
+            <Link 
+              href="/"
+              className="text-gray-400 text-sm font-bold uppercase hover:text-white inline-block"
             >
-              ← Volver a calculadoras
-            </button>
+            ← Volver a calculadoras
+            </Link>
 
             <h2 className="text-xl font-bold italic text-center uppercase">
               Selecciona tu Género
