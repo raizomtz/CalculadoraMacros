@@ -2,10 +2,10 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { useRouter } from "next/navigation"
+//import { useRouter } from "next/navigation"
 
 export default function Home() {
-  const router = useRouter()
+  //const router = useRouter()
 
   const [step, setStep] = useState(1)
   const [showModal, setShowModal] = useState(false)
@@ -71,6 +71,14 @@ export default function Home() {
     setStep(5)
   }
 
+    function irStep2() {
+    console.log("irStep2 llamada")
+    setStep(2)
+      setTimeout(() => {
+    setStep(2)
+  }, 10)
+  }
+
   return (
     <div className="bg-[#0f172a] min-h-screen text-white p-6">
       <div className="max-w-md mx-auto">
@@ -133,11 +141,12 @@ export default function Home() {
             </div>
 
             <button
-              onClick={() => setStep(2)}
-              className="w-full bg-red-600 text-white font-bold p-5 rounded-2xl uppercase shadow-lg shadow-red-900/20"
+            onClick={irStep2}
+            className="w-full bg-red-600 text-white font-bold p-5 rounded-2xl uppercase shadow-lg shadow-red-900/20 active:scale-95 transition-transform cursor-pointer"
             >
               Siguiente
             </button>
+            
           </div>
         )}
 
@@ -290,12 +299,12 @@ export default function Home() {
               </div>
             </div>
 
-            <button
-              onClick={() => router.push("/")}
-              className="w-full text-gray-400 text-sm font-bold uppercase py-4 hover:text-white transition-colors"
+            <Link 
+            href="/"
+            className="w-full text-gray-400 text-sm font-bold uppercase py-4 hover:text-white transition-colors text-center block"
             >
-              ← Nueva Estimación
-            </button>
+            ← Nueva Estimación
+            </Link>
 
             <p
               onClick={() => setShowModal(true)}
@@ -311,9 +320,7 @@ export default function Home() {
 
         {/* MODAL (igual) */}
         {showModal && (
-          <div className={`fixed inset-0 z-50 flex items-center justify-center p-6 transition ${
-    showModal ? "bg-black/80 backdrop-blur-sm" : "pointer-events-none opacity-0"
-  }`}>
+            <div className="fixed inset-0 z-50 flex items-center justify-center p-6 bg-black/80 backdrop-blur-sm">
             <div className="bg-gray-900 border border-gray-800 p-6 rounded-3xl max-w-sm w-full space-y-4 shadow-2xl">
               <h3 className="text-red-600 font-black text-xl italic uppercase">
                 ¿Por qué es una estimación?
